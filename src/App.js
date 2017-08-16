@@ -37,15 +37,25 @@ class App extends Component {
     )
   }
   addTodo(event){
-    this.state.todoList.push({
-      id: idMaker(),
-      title: event.target.value,
-      status: null,
-      deleted: false
-    })
-    this.setState({
-      newTodo: '',
-      todoList: this.state.todoList
+    // this.state.todoList.push({
+    //   id: idMaker(),
+    //   title: event.target.value,
+    //   status: null,
+    //   deleted: false
+    // })
+    // this.setState({
+    //   newTodo: '',
+    //   todoList: this.state.todoList
+    // })
+    this.setState((state)=>{
+      this.state.todoList.push({
+        id: idMaker(),
+        title: state.newTodo,
+        status: null,
+        deleted: false
+      })
+      state.newTodo = ''
+      return state
     })
   }
   changeTitle(event){
