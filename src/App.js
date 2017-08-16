@@ -15,7 +15,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload. Copy Run Modify.
         </p>
-        <Welcome name="my name"/>
+        <Welcome name={'my name'}/>
       </div>
     );
   }
