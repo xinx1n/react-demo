@@ -14,10 +14,10 @@ class App extends Component {
     }
   }
   render() {
-    let todos = this.state.todoList.map((item,index)=>{
+    let todos = this.state.todoList.filter(item=>!item.deleted).map((item,index)=>{
       return (
         <li key={index}>
-          <TodoItem todo={item} onToggle={this.toggle.bind(this)}/>
+          <TodoItem todo={item} onToggle={this.toggle.bind(this)} onDelete={this.delete.bind(this)}/>
         </li>
       )
     })
@@ -68,6 +68,10 @@ class App extends Component {
   }
   toggle(e,todo){
     todo.status = !todo.status
+    this.setState(this.state)
+  }
+  delete(e,todo){
+    todo.deleted = true
     this.setState(this.state)
   }
 }
