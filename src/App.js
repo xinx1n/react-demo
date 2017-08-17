@@ -37,6 +37,9 @@ class App extends Component {
     )
   }
   addTodo(event){
+    if(this.state.newTodo.trim()===''){
+      return
+    }
     // this.state.todoList.push({
     //   id: idMaker(),
     //   title: event.target.value,
@@ -66,7 +69,6 @@ class App extends Component {
   toggle(e,todo){
     todo.status = !todo.status
     this.setState(this.state)
-    console.log(this.state)
   }
 }
 let id = 0
