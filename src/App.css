@@ -1,13 +1,35 @@
+html, body, #root{ height: 100%; overflow: hidden; }
+#root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 .App {
-  margin: 2em 20em;
+  position: relative;
   padding: 0 1em;
-  min-height: 42em;
-  min-width: 32em;
+  height: 90%;
+  width: 80%;
+  max-width: 32em;
   text-align: center;
   color: #333;
   background: white;
   border: 1px solid #aaa;
   border-radius: 4px;
   box-shadow: 0 0 1em hsla(0,0%,0%,0.15);
+  overflow: hidden;
 }
-
+.App > .todoList {
+  height: calc(100% - 128px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.App > .todoList::-webkit-scrollbar {
+  display:none;
+}
+.App  > .todoList > li:nth-child(odd){
+  background: #eee;
+}
+.App  > .todoList > li:nth-child(even){
+  background: transparent;
+}

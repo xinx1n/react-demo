@@ -30,7 +30,7 @@ class App extends Component {
             onSubmit={this.addTodo.bind(this)}
             OnChange={this.changeTitle.bind(this)}/>
         </div>
-        <ol>
+        <ol className="todoList">
           {todos}
         </ol>
       </div>
