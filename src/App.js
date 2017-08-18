@@ -6,6 +6,10 @@ import TodoInput from './TodoInput'
 import TodoItem from './TodoItem'
 import * as localStore from './localStore'
 
+import Logger from './Logger'
+let Log = new Logger({open:false})
+let log = Log.log.bind(Log)
+log('log 打开')
 class App extends Component {
   constructor(props){
     super(props)
@@ -79,8 +83,10 @@ class App extends Component {
     this.setState(this.state)
   }
 }
-let id = 0
+let id = +localStorage.getItem('todoID')||0
 function idMaker(){
-   return ++id
+  id+=1
+  localStorage.setItem('todoID',id)
+  return id
 }
 export default App
