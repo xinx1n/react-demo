@@ -37,6 +37,9 @@ class App extends Component {
       </div>
     )
   }
+  componentDidUpdate(){
+    localStore.save('todoList', this.state.todoList)
+  }
   addTodo(event){
     if(this.state.newTodo.trim()===''){
       return
@@ -61,7 +64,6 @@ class App extends Component {
       state.newTodo = ''
       return state
     })
-    localStore.save('todoList', this.state.todoList)
   }
   changeTitle(event){
     this.setState({
@@ -71,12 +73,10 @@ class App extends Component {
   toggle(e,todo){
     todo.status = !todo.status
     this.setState(this.state)
-    localStore.save('todoList', this.state.todoList)
   }
   delete(e,todo){
     todo.deleted = true
     this.setState(this.state)
-    localStore.save('todoList', this.state.todoList)
   }
 }
 let id = 0
