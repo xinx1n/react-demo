@@ -59,7 +59,7 @@ class App extends Component {
     //   todoList: this.state.todoList
     // })
     this.setState((state)=>{
-      this.state.todoList.unshift({
+      state.todoList.unshift({
         id: idMaker(),
         title: state.newTodo,
         status: false,
