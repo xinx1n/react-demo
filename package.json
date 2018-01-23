@@ -16,7 +16,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://myname.github.io/react-demo",
+  "homepage": "http://xinx1n.github.io/react-demo",
   "devDependencies": {
     "gh-pages": "^1.0.0"
   }
